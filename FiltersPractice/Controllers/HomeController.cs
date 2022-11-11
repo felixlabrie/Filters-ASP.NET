@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FiltersPractice.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,10 @@ namespace FiltersPractice.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        [CustomAuth(false)]
+        public String Index()
         {
-            return View();
+            return "This is the Index of the action on the Home Controller";
         }
 
         public ActionResult About()
